@@ -18,17 +18,17 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with OAuth2 CKAN Extension.  If not, see <http://www.gnu.org/licenses/>.
 
-from __future__ import unicode_literals
+
 
 import logging
-import oauth2
+from . import oauth2
 import os
 
 from functools import partial
 from ckan import plugins
 from ckan.common import g
 from ckan.plugins import toolkit
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 log = logging.getLogger(__name__)
 

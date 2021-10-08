@@ -19,11 +19,11 @@
 # along with OAuth2 CKAN Extension.  If not, see <http://www.gnu.org/licenses/>.
 
 
-from __future__ import unicode_literals
+
 
 import base64
 import ckan.model as model
-import db
+from . import db
 import json
 import logging
 from six.moves.urllib.parse import urljoin
@@ -38,7 +38,7 @@ import six
 
 import jwt
 
-import constants
+from . import constants
 
 
 log = logging.getLogger(__name__)
