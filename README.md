@@ -8,7 +8,7 @@ WORK IN PROGRESS: This extension is currently being migrated to Python 3.
 
 The OAuth2 extension allows site visitors to login through an OAuth2 server.
 
-**Note**: This extension is being tested in CKAN 2.6, 2.7 and 2.8. These are therefore considered as the supported versions
+**Note**: This extension is being tested in CKAN 2.9+ on Python 3.8. These are therefore considered as the supported versions
 
 
 ## Links
