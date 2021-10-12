@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2014 CoNWeT Lab., Universidad Politécnica de Madrid
+# Forked by Raft LLC, 2021 for Python 3 migration
 
 # This file is part of OAuth2 CKAN Extension.
 
@@ -62,10 +63,10 @@ setup(
     The OAuth2 extension allows site visitors to login through an OAuth2 server.
     ''',
     keywords='CKAN, OAuth2',
-    author='Aitor Magán',
-    author_email='amagan@conwet.com',
-    url='https://github.com/conwetlab/ckanext-oauth2',
-    download_url='https://github.com/conwetlab/ckanext-oauth2/tarball/v' + __version__,
+    author='Aitor Magán, John Willis',
+    author_email='amagan@conwet.com, jwillis@goraft.tech',
+    url='https://github.com/raft-tech/ckanext-oauth2-py3',
+    download_url='https://github.com/raft-tech/ckanext-oauth2-py3/tarball/v' + __version__,
     license='',
     packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
     namespace_packages=['ckanext'],
