@@ -34,7 +34,7 @@ from ckanext.oauth2.utils import get_previous_page
 log = logging.getLogger(__name__)
 
 
-class OAuth2Controller(toolkit.BaseController):
+class OAuth2Controller:
 
     def __init__(self):
         self.oauth2helper = oauth2.OAuth2Helper()
