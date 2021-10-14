@@ -25,7 +25,6 @@ from . import constants
 
 from ckan.common import session
 import ckan.lib.helpers as helpers
-import ckan.lib.base as base
 import ckan.plugins.toolkit as toolkit
 
 from ckanext import oauth2
@@ -35,7 +34,7 @@ from ckanext.oauth2.utils import get_previous_page
 log = logging.getLogger(__name__)
 
 
-class OAuth2Controller(base.BaseController):
+class OAuth2Controller(toolkit.BaseController):
 
     def __init__(self):
         self.oauth2helper = oauth2.OAuth2Helper()
