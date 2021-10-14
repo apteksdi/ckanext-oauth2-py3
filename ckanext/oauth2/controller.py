@@ -27,9 +27,9 @@ from ckan.common import session
 import ckan.lib.helpers as helpers
 import ckan.lib.base as base
 import ckan.plugins.toolkit as toolkit
-from . import oauth2
 
-from ckanext.oauth2.plugin import _get_previous_page
+from ckanext import oauth2
+from ckanext.oauth2.utils import get_previous_page
 
 
 log = logging.getLogger(__name__)
@@ -49,7 +49,7 @@ class OAuth2Controller(base.BaseController):
         # Get the page where the user was when the loggin attemp was fired
         # When the user is not logged in, he/she should be redirected to the dashboard when
         # the system cannot get the previous page
-        came_from_url = _get_previous_page(constants.INITIAL_PAGE)
+        came_from_url = get_previous_page(constants.INITIAL_PAGE)
 
         self.oauth2helper.challenge(came_from_url)
 
