@@ -31,8 +31,6 @@ from ckan.plugins import toolkit
 from flask import Blueprint
 from urllib.parse import urlparse
 
-from .controller import OAuth2Controller
-
 log = logging.getLogger(__name__)
 
 
@@ -102,8 +100,12 @@ class OAuth2Plugin(plugins.SingletonPlugin):
 
     def get_blueprint(self):
         log.debug('Setting up Blueprint rules to redirect to OAuth2 service')
+
         blueprint = Blueprint(self.name, self.__module__)
         blueprint.template_folder = u'templates'
+
+        # Import here to prevent circular imports
+        from .controller import OAuth2Controller
         controller = OAuth2Controller()
 
         rules = [
