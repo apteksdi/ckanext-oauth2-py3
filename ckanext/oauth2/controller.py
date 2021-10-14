@@ -50,30 +50,28 @@ class OAuth2Controller:
         # the system cannot get the previous page
         came_from_url = get_previous_page(constants.INITIAL_PAGE)
 
-        self.oauth2helper.challenge(came_from_url)
+        return self.oauth2helper.challenge(came_from_url)
 
     def callback(self):
         try:
+            log.debug('attempting to handle callback')
             token = self.oauth2helper.get_token()
+            log.debug(f'got token: {token}')
             user_name = self.oauth2helper.identify(token)
+            log.debug(f'got username: {user_name}')
             self.oauth2helper.remember(user_name)
             self.oauth2helper.update_token(user_name, token)
-            self.oauth2helper.redirect_from_callback()
+            return self.oauth2helper.redirect_from_callback()
         except Exception as e:
 
             session.save()
 
             # If the callback is called with an error, we must show the message
-            error_description = toolkit.request.GET.get('error_description')
+            log.debug(f'original err: {e}')
+            error_description = toolkit.request.get_data()
+            log.debug(f'request data: {error_description}')
             if not error_description:
-                if e.message:
-                    error_description = e.message
-                elif hasattr(e, 'description') and e.description:
-                    error_description = e.description
-                elif hasattr(e, 'error') and e.error:
-                    error_description = e.error
-                else:
-                    error_description = type(e).__name__
+                error_description = str(e)
 
             toolkit.response.status_int = 302
             redirect_url = oauth2.get_came_from(toolkit.request.params.get('state'))
