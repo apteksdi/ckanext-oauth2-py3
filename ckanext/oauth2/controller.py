@@ -27,7 +27,7 @@ from ckan.common import session
 import ckan.lib.helpers as helpers
 import ckan.plugins.toolkit as toolkit
 
-from ckanext import oauth2
+from ckanext.oauth2 import oauth2
 from ckanext.oauth2.utils import get_previous_page
 
 
