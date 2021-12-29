@@ -13,7 +13,7 @@ The OAuth2 extension allows site visitors to login through an OAuth2 server.
 ## Installing with Pip over GitHub
 This fork can be installed with the following command:
 ```
-pip install git+https://github.com/raft-tech/ckanext-oauth2-py3.git
+pip install git+https://github.com/apteksdi/ckanext-oauth2-py3.git
 ```
 
 ## Links
