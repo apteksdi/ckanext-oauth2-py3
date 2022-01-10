@@ -76,7 +76,7 @@ setup(
         'nose>=1.3.0'
     ],
     install_requires=[
-        'requests-oauthlib==0.8.0',
+        'requests-oauthlib==1.3.0',
         'pyjwt==2.3.0',
     ],
     tests_require=[
